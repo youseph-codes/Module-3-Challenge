@@ -1,6 +1,6 @@
 // Assignment code here
 var passwordLength = 8;
-var choices = [];
+var choiceS = [];
 
 var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',]
@@ -16,14 +16,21 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   if (rightprompts) {
-    var newPassword = generatedPassword();
+    var newPassword = generatePassword();
     passwordText.value = newPassword;
   } else {
     passwordText.value = "";
   }
 }
 
-
+function generatePassword() {
+  var password = "";
+  for (var i = 0; i < passwordLength; i++) {
+    var index = Math.floor(Math.random() * choice.length);
+    password = password + choice[index];
+  }
+  return password;
+}
 
 function prompts() {
   choice = [];
@@ -36,11 +43,11 @@ function prompts() {
   }
 
   if (confirm("Do you want lowercase letters in your password?")) {
-    choice = choice.concat(lowercase);
+    choice = choice.concat(lowerCase);
   }
 
   if (confirm("Do you want uppercase letters in your password?")) {
-    choice = choice.concat(uppercase);
+    choice = choice.concat(upperCase);
   }
 
   if (confirm("Do you want numbers in your password?")) {
@@ -51,7 +58,6 @@ function prompts() {
     choice = choice.concat(symbols);
   }
   return true
-  }
 }
 
 // Add event listener to generate button
