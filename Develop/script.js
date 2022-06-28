@@ -1,64 +1,64 @@
-// GLOBAL ASSIGNED VARIABLES
-let alphaCap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-let alphaLow = 'acdefghijklnopqrstuvwxyz';
-let num = '0123456789';
-let specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-let allChar = '';
-let length = '';
+// Assignment code here
+var passwordLength = 8;
+var choices = [];
 
+var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
+var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',]
+var numbers = ['0','1','2','3','4','5','6','7','8','9',]
+var symbols = ['!','@','#','$','%','^','&','*','<','=','>','+','~','?',]
 
-// Get references to the #generate element 
-let generateBtn = document.querySelector("#generate");
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
-// GENERATE PASSWORD FUNCTION
+// Write password to the #password input
 function writePassword() {
-  let passwordLengthPrompt = Number(prompt('Pick a password length from 8 to 128 characters.'));
-  //if password length is null, too small, or too large, alert user and re-run function
-  if (!passwordLengthPrompt || passwordLengthPrompt < 8 || passwordLengthPrompt > 128) {
-    alert('Please type a valid answer!');
-    writePassword();
+  var rightprompts = prompts();
+  var passwordText = document.querySelector("#password");
+
+
+  if (rightprompts) {
+    var newPassword = generatePassword();
+    passwordText.value = newPassword;
+  } else {
+    passwordText.value = "";
   }
-  //if length is sufficient, add number to the length variable
-  else {
-    length += passwordLengthPrompt;
+}
+
+function generatePassword() {
+  var password = "";
+  for (var i = 0; i < passwordLength; i++) {
+      var index = Math.floor(Math.random() * choices.length);
+      password = password + choices[index];
+  }
+  return password;
+}
+
+function prompts() {
+  choices = [];
+
+  passwordLength = parseInt(prompt("How long to you want your password to be? (between 8 -128 characters!"))
+
+  if (isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8) {
+    alert("The chosen length of your password must be written as a digit (example: 12, 10, 21. not: twelve, ten, twenty-one). Please try again.");
+    return false;
   }
 
-  //user prompts
-  let addLowercase = window.confirm('Click Okay if you would like to include lowercase characters.');
-  let addUppercase = window.confirm('Click Okay if you would like to include uppercase characters.');
-  let addNumbers = window.confirm('Click okay if you would like to include numbers.');
-  let addSpecialChar = window.confirm('Click okay if you would like to include special characters.');
-
-  //if user picks certain variables, add them to variable allChar. if allChar is null, return to writePassword function.
-  if (addLowercase) {
-    allChar += alphaLow;
-  }
-  if (addUppercase) {
-    allChar += alphaCap;
-  }
-  if (addNumbers) {
-    allChar += num;
-  }
-  if (addSpecialChar) {
-    allChar += specialChar
-  }
-  if (!allChar) {
-    alert('You must include at least one character type!');
-    writePassword();
+  if (confirm("Do you want lowercase letters in your password?")) {
+    choices = choices.concat(lowerCase);
   }
 
-  //create new string to represent randomly selected characters using math.random method
-  let newPassword = '';
-  for (let i = 0; i < length; i++) {
-    newPassword += allChar.charAt(Math.floor(Math.random() * allChar.length));
-    console.log(newPassword);
+  if (confirm("Do you want uppercase letters in your password?")) {
+    choices = choices.concat(upperCase);
   }
 
-  //declare variable to select HTML DOM element and assign the value to be equal to newPassword variable
-  let password = document.querySelector("#password");
-  password.value = newPassword;
-
+  if (confirm("Do you want numbers in your password?")) {
+    choices = choices.concat(numbers);
+  }
+  if (confirm("Do you want special characters in your password?")) {
+    choices = choices.concat(symbols);
+  }
+  return true
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
