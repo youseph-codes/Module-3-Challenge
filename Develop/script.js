@@ -15,50 +15,44 @@ function writePassword() {
   var rightprompts = prompts();
   var passwordText = document.querySelector("#password");
 
-
   if (rightprompts) {
-    var newPassword = generatePassword();
+    var newPassword = generatedPassword();
     passwordText.value = newPassword;
   } else {
     passwordText.value = "";
   }
 }
 
-function generatePassword() {
-  var password = "";
-  for (var i = 0; i < passwordLength; i++) {
-      var index = Math.floor(Math.random() * choices.length);
-      password = password + choices[index];
-  }
-  return password;
-}
+
 
 function prompts() {
-  choices = [];
+  choice = [];
 
-  passwordLength = parseInt(prompt("How long to you want your password to be? (between 8 -128 characters!"))
+  passwordLength = parseInt(prompt("How long do you want your password to be? (between 8 - 128 characters!"))
 
   if (isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8) {
-    alert("The chosen length of your password must be written as a digit (example: 12, 10, 21. not: twelve, ten, twenty-one). Please try again.");
+    alert("Please choose a length that's between 8 and 128!");
     return false;
   }
 
   if (confirm("Do you want lowercase letters in your password?")) {
-    choices = choices.concat(lowerCase);
+    choice = choice.concat(lowercase);
   }
 
   if (confirm("Do you want uppercase letters in your password?")) {
-    choices = choices.concat(upperCase);
+    choice = choice.concat(uppercase);
   }
 
   if (confirm("Do you want numbers in your password?")) {
-    choices = choices.concat(numbers);
+    choice = choice.concat(numbers);
   }
+
   if (confirm("Do you want special characters in your password?")) {
-    choices = choices.concat(symbols);
+    choice = choice.concat(symbols);
   }
   return true
+  }
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
+generateBtn.addEventListener("click", writePassword);
