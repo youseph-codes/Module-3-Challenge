@@ -1,6 +1,7 @@
 # Password Generator Starter Code
+Link to the webpage is here! 👉🏾 file:///Users/yousopp/Columbia/modules/module-3/module-3-challenge/Develop/index.html
 
-## Description
+# Description
 For this project, I was required to create a functional application that an employee can use to generate a random password with regards to the criteria they selected. Although the interface is polished and styled I was ultimately tasked with writing up the JavaScript that will power up the webpage. In terms of funtionality, this webpage should be able to throw 5 prompts at the user.
 
 - how long does the user want their password to be.
@@ -42,9 +43,6 @@ I had the criteria show up using a loop equation that holds the user's prompt ch
 ## WHEN all prompts are answered, THEN a password is generated that matches the selected criteria.
 ## WHEN the password is generated, THEN the password is either displayed in an alert or written to the page.
 
-![](./images/screenDemo.mov)
+with all the prompts answered, The generated code will display accordingly!
 
-
-
-
-
+![final generated password](./images/finalGeneratedPW.png)
