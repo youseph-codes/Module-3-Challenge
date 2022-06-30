@@ -17,12 +17,22 @@ Honestly, this was a very difficult challenge. I dont think I've developed a ful
 or how it works but I know that I had to tackle this challenge with a more calculated approach.
 
 # Getting Started
-## WHEN I click the button to generate a password
-## THEN I am presented with a series of prompts for password criteria
+## WHEN I click the button to generate a password, THEN I am presented with a series of prompts for password criteria.
 
-This was the overall function of this webpage. to make this happen, I applied the equation below
+This was the overall function of this webpage. to make this happen, I applied the equation below.
 
 ![generatePW button](./images/generatePassword.png)
+
+## WHEN prompted for password criteria, THEN I select which criteria to include in the password.
+## WHEN prompted for the length of the password, THEN I choose a length of at least 8 characters and no more than 128 characters.
+
+I had the criteria show up using a loop equation that holds the user's prompt choices.
+
+![](./images/passwordLengthPrompt.png)
+![](./images/lowercasePrompt.png)
+![](./images/uppercasePrompt.png)
+![](./images/symbolPrompt.png)
+![](./images/numberPrompt.png)
 
 ## Installing
 
