@@ -25,20 +25,20 @@ This was the overall function of this webpage. to make this happen, I applied th
 
 for this prompt to do what it does, I used an "if (isNaN(...) function along with adding straight (or brackets to ensure that the user chooses a number that corresponds with the prompt. If the user were to ask for a number outside the character list, the prompt would remind the user to stay within the bounderies of numbers between 8 and 128 before moving on to the next prompt.
 
-![](./images/passwordLengthPrompt.png)
-![](./images/isNaN.png)
-![](./images/warning.png)
+![password length prompt](./images/passwordLengthPrompt.png)
+![isNaN JavaScript](./images/isNaN.png)
+![password length reminder](./images/warning.png)
 
 ## WHEN asked for character types to include in the password, THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters.
 ## WHEN I answer each prompt, THEN my input should be validated and at least one character type should be selected.
 
 I had the criteria show up using a loop equation that holds the user's prompt choices. The script then records the user's choices and completes the task when all of the prompts are answered to generate a combination of letters, numbers, and special characters of the user's choice.
 
-![](./images/promptListJavaScript.png)
-![](./images/lowercasePrompt.png)
-![](./images/uppercasePrompt.png)
-![](./images/symbolPrompt.png)
-![](./images/numberPrompt.png)
+![prompt list JavaScript code](./images/promptListJavaScript.png)
+![lowercase prompt](./images/lowercasePrompt.png)
+![uppercase prompt](./images/uppercasePrompt.png)
+![special character prompt](./images/symbolPrompt.png)
+![number prompt](./images/numberPrompt.png)
 
 ## WHEN all prompts are answered, THEN a password is generated that matches the selected criteria.
 ## WHEN the password is generated, THEN the password is either displayed in an alert or written to the page.
@@ -46,3 +46,5 @@ I had the criteria show up using a loop equation that holds the user's prompt ch
 with all the prompts answered, The generated code will display accordingly!
 
 ![final generated password](./images/finalGeneratedPW.png)
+
+# ENJOY!
