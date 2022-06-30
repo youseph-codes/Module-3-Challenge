@@ -1,16 +1,16 @@
-## Password Generator Starter Code
+# Password Generator Starter Code
 
 
-# Description
+## Description
 For this project, I was 
 
-# Getting Started
+## Getting Started
 
 
-# Installing
+## Installing
 
 
-# Executing Program
+## Executing Program
 
 
-# Help
+## Help
