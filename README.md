@@ -1,5 +1,5 @@
 # Password Generator Starter Code
-Link to the webpage is here! 👉🏾 file:///Users/yousopp/Columbia/modules/module-3/module-3-challenge/Develop/index.html
+Link to the webpage is here! 👉🏾 https://youseph-codes.github.io/module-3-challenge/
 
 # Description
 For this project, I was required to create a functional application that an employee can use to generate a random password with regards to the criteria they selected. Although the interface is polished and styled I was ultimately tasked with writing up the JavaScript that will power up the webpage. In terms of funtionality, this webpage should be able to throw 5 prompts at the user.
